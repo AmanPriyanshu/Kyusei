@@ -33,7 +33,7 @@ def compute_distance_matric(embeds):
 def pull_repos(repos):
 	repo_keys = pull_repo_key(repos)
 	distance_matrix = np.zeros((len(repo_keys), len(repo_keys)))
-	for feature_name, weight in zip(['explanation', 'category_desc', 'category_name'], [0.2, 0.4, 0.4]):
+	for feature_name, weight in zip(['explanation', 'category_desc', 'category_name'], [0.05, 0.45, 0.5]):
 		embeds = get_embeddings(feature_name, repos)
 		distance_matrix_embed = compute_distance_matric(embeds)
 		distance_matrix += distance_matrix_embed*weight
