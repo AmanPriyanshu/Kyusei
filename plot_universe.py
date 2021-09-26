@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import cv2
 import seaborn as sns
 import matplotlib.patches as mpatches
 
