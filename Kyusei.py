@@ -6,7 +6,6 @@ from PIL import Image
 from make_clusters import compute_clusters
 from plot_universe import generate_galaxies, plot_stars
 import matplotlib.pyplot as plt
-import os
 
 st.markdown("""
 <style>
@@ -53,12 +52,8 @@ if st.button("Submit"):
     st.markdown("## A Spa-ce-ial Representation of these Embeddings:")
     imageLocation = st.empty()
     for _ in range(int(2*np.pi//0.05)):
+        imageLocation.image('stars.png')
         points_arr, centroid_arr, keys_arr = generate_galaxies(results_clusters, base_angle=base_angle+i*0.05)
         plot_stars(points_arr, centroid_arr, keys_arr, repos)
-        imageLocation.image('stars.png')
         time.sleep(0.075)
-        try:
-            os.remove('stars.png')
-        except:
-            pass
         i += 1
