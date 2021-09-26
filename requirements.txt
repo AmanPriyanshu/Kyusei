@@ -2,3 +2,4 @@ sklearn==0.0
 streamlit==0.87.0
 tqdm==4.61.1
 matplotlib==3.4.2
+seaborn==0.11.1
