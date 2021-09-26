@@ -1,3 +1,0 @@
-sklearn
-streamlit==0.87.0
-tqdm==4.61.1
