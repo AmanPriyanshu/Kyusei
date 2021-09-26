@@ -6,6 +6,7 @@ from PIL import Image
 from make_clusters import compute_clusters
 from plot_universe import generate_galaxies, plot_stars
 import matplotlib.pyplot as plt
+import os
 
 st.markdown("""
 <style>
@@ -55,5 +56,6 @@ if st.button("Submit"):
         imageLocation.image('stars.png')
         points_arr, centroid_arr, keys_arr = generate_galaxies(results_clusters, base_angle=base_angle+i*0.05)
         plot_stars(points_arr, centroid_arr, keys_arr, repos)
-        time.sleep(0.05)
+        time.sleep(0.075)
+        os.remove('stars.png')
         i += 1
